@@ -1,0 +1,66 @@
+.navigation
+  position: fixed
+  top: 0
+  width: 100%
+  z-index: 1
+  padding: 20px
+  display: flex
+  transition: all 300ms ease
+  
+  &.pinned
+    background: $color-black
+    padding: 10px 20px
+    .left, .right
+      padding-top: 30px
+    .center
+      .logo
+        height: 90px
+      h1
+        opacity: 0
+        height: 0
+        margin: 0
+  
+  a
+    display: inline-block
+    color: $color-white
+    font-family: $font-family-brand
+    font-size: 16px
+    font-weight: $font-weight-bold
+    text-shadow: 0 1px 2px black(70%)
+    text-decoration: none
+    text-transform: uppercase
+    transition: background 150ms ease
+    padding: 6px 12px
+    border-radius: 10px
+    &:hover
+      background: white(20%)
+  
+  .left
+    flex: 1
+    padding: 30px 0 0 40px
+    transition: all 300ms ease
+    a { margin-right: 40px }
+    
+  .right
+    flex: 1
+    text-align: right
+    padding: 30px 40px 0 0
+    transition: all 300ms ease
+    a { margin-left: 40px }
+  
+  .center
+    flex: none
+    text-align: center
+
+    .logo
+      height: 120px
+      transition: all 300ms ease
+
+    h1
+      margin: 8px 0 0 0
+      font-family: $font-family-brand
+      font-size: 20px
+      font-weight: $font-weight-bold
+      text-shadow: 0 1px 2px black(70%)
+      text-transform: uppercase
+      transition: all 300ms ease

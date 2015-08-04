@@ -11,16 +11,16 @@ module.exports = {
       {test: /\.coffee$/, loader: 'coffee-loader'},
       {test: /\.jsx$/,    loader: 'script-loader!jsx-loader'},
       {test: /\.styl$/,   loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')},
-      {test: /assets/,    loader: 'url-loader?name=static/[name].[ext]'},
+      {test: /assets/,    loader: 'file-loader?name=static/[name].[ext]'},
     ]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'umd'
   },
   plugins: [
-    new StaticSiteGeneratorPlugin('bundle.js', config.routes, config),
+    new StaticSiteGeneratorPlugin('bundle.js', config.routes),
     new ExtractTextPlugin('[name].css'),
   ],
   resolve: {

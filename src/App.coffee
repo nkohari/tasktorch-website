@@ -12,7 +12,7 @@ routes = [
 
 ]
 
-if document?
+if typeof document isnt 'undefined'
   Router.run routes, Router.HistoryLocation, (handler) ->
     element = React.createElement(handler, {})
     React.render(element, document)

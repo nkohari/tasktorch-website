@@ -1,18 +1,19 @@
 #--------------------------------------------------------------------------------
-React = require 'react'
-{div} = React.DOM
+React                  = require 'react'
+{a, div, h1, img, nav} = React.DOM
 #--------------------------------------------------------------------------------
-require './Splash.styl'
+require './Slideshow.styl'
 #--------------------------------------------------------------------------------
 
-Splash = React.createClass {
+Slideshow = React.createClass {
 
-  displayName: 'Splash'
+  displayName: 'Slideshow'
 
   render: ->
 
-    div {className: 'splash'}
+    div {className: 'slideshow'}
+
 
 }
 
-module.exports = Splash
+module.exports = Slideshow

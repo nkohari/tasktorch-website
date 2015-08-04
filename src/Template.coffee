@@ -4,7 +4,7 @@ React        = require 'react'
 Router       = require 'react-router'
 RouteHandler = React.createFactory(Router.RouteHandler)
 {PropTypes}  = React
-{html, head, title, body, link} = React.DOM
+{html, head, title, body, link, script} = React.DOM
 #--------------------------------------------------------------------------------
 require './Template.styl'
 #--------------------------------------------------------------------------------
@@ -25,8 +25,8 @@ Template = React.createClass {
         title {}, @props.title
         link {rel: 'stylesheet', href: 'bundle.css'}
         link {rel: 'stylesheet', href: '//cloud.typography.com/6999932/639968/css/fonts.css'}
-      body {},
-        RouteHandler props
+      RouteHandler props
+      script {src: 'bundle.js'}
 
 }
 
