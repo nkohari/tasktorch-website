@@ -4,7 +4,7 @@ Navigation = React.createFactory(require 'components/Navigation')
 Section    = React.createFactory(require 'components/Section')
 Slideshow  = React.createFactory(require 'components/Slideshow')
 Splash     = React.createFactory(require 'components/Splash')
-{body, header, main} = React.DOM
+{body, div, header, main} = React.DOM
 #--------------------------------------------------------------------------------
 require './HomePage.styl'
 #--------------------------------------------------------------------------------
@@ -29,7 +29,11 @@ HomePage = React.createClass {
       Splash {}
       main {},
         Section {color: 'blue'},
-          Slideshow {}
+          Slideshow {name: 'focus', title: "Stay focused on what's relevant to you."},
+            div {}, 'test'
+        Section {color: 'pink'},
+          Slideshow {name: 'bigpicture', title: "Step back and see the big picture."},
+            div {}, 'test'
 
   handleScroll: ->
     @setState {scrolled: document.body.scrollTop > 500}

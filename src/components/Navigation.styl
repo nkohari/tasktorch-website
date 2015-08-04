@@ -2,19 +2,21 @@
   position: fixed
   top: 0
   width: 100%
-  z-index: 1
+  z-index: 100
   padding: 20px
   display: flex
-  transition: all 300ms ease
+  tween(300ms)
   
   &.pinned
-    background: $color-black
     padding: 10px 20px
+    background: $color-black
+    border-bottom: 1px solid $color-darkgray
+    box-shadow: 0 0 20px black(50%)
     .left, .right
-      padding-top: 30px
+      padding-top: 12px
     .center
       .logo
-        height: 90px
+        height: 50px
       h1
         opacity: 0
         height: 0
@@ -29,23 +31,23 @@
     text-shadow: 0 1px 2px black(70%)
     text-decoration: none
     text-transform: uppercase
-    transition: background 150ms ease
     padding: 6px 12px
     border-radius: 10px
+    tween(150ms)
     &:hover
       background: white(20%)
   
   .left
     flex: 1
     padding: 30px 0 0 40px
-    transition: all 300ms ease
+    tween(300ms)
     a { margin-right: 40px }
     
   .right
     flex: 1
     text-align: right
     padding: 30px 40px 0 0
-    transition: all 300ms ease
+    tween(300ms)
     a { margin-left: 40px }
   
   .center
@@ -54,7 +56,7 @@
 
     .logo
       height: 120px
-      transition: all 300ms ease
+      tween(300ms)
 
     h1
       margin: 8px 0 0 0
@@ -63,4 +65,4 @@
       font-weight: $font-weight-bold
       text-shadow: 0 1px 2px black(70%)
       text-transform: uppercase
-      transition: all 300ms ease
+      tween(300ms)

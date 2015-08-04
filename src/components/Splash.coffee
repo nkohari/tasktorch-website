@@ -1,6 +1,6 @@
 #--------------------------------------------------------------------------------
-React = require 'react'
-{div} = React.DOM
+React    = require 'react'
+{header} = React.DOM
 #--------------------------------------------------------------------------------
 require './Splash.styl'
 #--------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ Splash = React.createClass {
 
   render: ->
 
-    div {className: 'splash'}
+    header {className: 'splash'}
 
 }
 
