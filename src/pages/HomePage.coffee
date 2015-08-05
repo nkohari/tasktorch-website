@@ -1,9 +1,11 @@
 #--------------------------------------------------------------------------------
-React      = require 'react'
+React      = require 'react/addons'
 Navigation = React.createFactory(require 'components/Navigation')
 Section    = React.createFactory(require 'components/Section')
 Slideshow  = React.createFactory(require 'components/Slideshow')
 Splash     = React.createFactory(require 'components/Splash')
+QueueSlide = React.createFactory(require 'slides/QueueSlide')
+PassSlide  = React.createFactory(require 'slides/PassSlide')
 {body, div, header, main} = React.DOM
 #--------------------------------------------------------------------------------
 require './HomePage.styl'
@@ -30,10 +32,11 @@ HomePage = React.createClass {
       main {},
         Section {color: 'blue'},
           Slideshow {name: 'focus', title: "Stay focused on what's relevant to you."},
-            div {}, 'test'
+            QueueSlide {}
+            PassSlide {}
         Section {color: 'pink'},
           Slideshow {name: 'bigpicture', title: "Step back and see the big picture."},
-            div {}, 'test'
+            QueueSlide {}
 
   handleScroll: ->
     @setState {scrolled: document.body.scrollTop > 500}

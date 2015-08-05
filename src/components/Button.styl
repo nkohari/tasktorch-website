@@ -1,0 +1,25 @@
+.button
+  display: inline-block
+  font-family: $font-family-gotham
+  font-size: 16px
+  font-weight: $font-weight-bold
+  border: 2px solid
+  border-radius: 10px
+  text-transform: uppercase
+  padding: 10px 30px
+  cursor: pointer
+  tween(150ms)
+  
+  &.orange
+    color: $color-brand-orange
+    border-color: $color-brand-orange
+    &:hover
+      color: $color-black
+      background: $color-brand-orange
+    
+  &.pink
+    color: $color-brand-pink
+    border-color: $color-brand-pink
+    &:hover
+      color: $color-black
+      background: $color-brand-pink

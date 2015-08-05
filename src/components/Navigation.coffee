@@ -1,5 +1,5 @@
 #--------------------------------------------------------------------------------
-React                  = require 'react'
+React                  = require 'react/addons'
 classSet               = require 'util/classSet'
 {PropTypes}            = React
 {a, div, h1, img, nav} = React.DOM

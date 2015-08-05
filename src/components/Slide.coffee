@@ -1,23 +1,24 @@
 #--------------------------------------------------------------------------------
-React       = require 'react/addons'
-{PropTypes} = React
-{div}       = React.DOM
+React      = require 'react/addons'
+mergeProps = require 'util/mergeProps'
+{div}      = React.DOM
 #--------------------------------------------------------------------------------
-require './Section.styl'
+require './Slide.styl'
 #--------------------------------------------------------------------------------
 
-Section = React.createClass {
+Slide = React.createClass {
 
-  displayName: 'Section'
-
-  propTypes:
-    color: PropTypes.string
+  displayName: 'Slide'
 
   render: ->
 
-    div {className: "section #{@props.color}"},
+    props = mergeProps @props, {
+      className: 'slide'
+    }
+
+    div props,
       @props.children
 
 }
 
-module.exports = Section
+module.exports = Slide

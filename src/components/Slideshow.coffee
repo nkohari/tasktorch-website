@@ -2,6 +2,7 @@
 _                  = require 'lodash'
 React              = require 'react/addons'
 classSet           = require 'util/classSet'
+dom                = require 'util/dom'
 CSSTransitionGroup = React.createFactory(React.addons.CSSTransitionGroup)
 {PropTypes}        = React
 {a, div, h2, img}  = React.DOM
@@ -17,29 +18,52 @@ Slideshow = React.createClass {
     name:     PropTypes.string
     title:    PropTypes.string
     backdrop: PropTypes.string
+    delay:    PropTypes.number
+
+  getDefaultProps: ->
+    {delay: 5000}
 
   getInitialState: ->
-    {slide: 0}
+    {hovering: false, slide: 0}
 
   componentWillMount: ->
-    @_setSlides(@props.children)
+    slides = _.compact _.flatten [@props.children]
+    @slides = _.map slides, (slide, index) ->
+      React.cloneElement slide, {key: index}
 
-  componentWillReceiveProps: ->
-    @_setSlides(@props.children)
+  componentWillReceiveProps: (newProps) ->
+    slides = _.compact _.flatten [newProps.children]
+    @slides = _.map slides, (slide, index) ->
+      React.cloneElement slide, {key: index}
+
+  componentDidMount: ->
+    @startAutoAdvance()
+
+  componentWillUnmount: ->
+    @stopAutoAdvance()
 
   render: ->
 
-    currentSlide = @slides[@state.slide]
+    slide = @slides[@state.slide]
+    callout = slide.type.callout
 
-    div {className: "slideshow #{@props.name}"},
-      div {className: 'top'},
+    classes = classSet [
+      'slideshow'
+      @props.name
+      'hovering' if @state.hovering
+    ]
+
+    div {className: classes, @onMouseEnter, @onMouseLeave},
+      div {ref: 'top', className: 'top'},
         div {className: 'header'},
           h2 {}, @props.title
           div {className: 'chiclets'}, @renderChiclets()
-        div {className: 'graphic'},
-          div {className: 'callout'}
-      CSSTransitionGroup {component: 'div', className: 'caption', transitionName: 'fade'},
-        currentSlide
+        CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade', onClick: @advance},
+          div {key: @state.slide, className: 'callout', style: {left: callout.x, top: callout.y}},
+            img {src: callout.image}
+      div {className: 'bottom'},
+        CSSTransitionGroup {component: 'div', className: 'caption', transitionName: 'fade'},
+          slide
 
   renderChiclets: ->
     _.map @slides, (slide, index) =>
@@ -47,10 +71,29 @@ Slideshow = React.createClass {
         'chiclet'
         'selected' if index == @state.slide
       ]
-      a {className: classes}
+      a {key: index, className: classes, onClick: @setSlide.bind(this, index)}
 
-  _setSlides: (children) ->
-    @slides = _.compact _.flatten [children]
+  onMouseEnter: ->
+    @setState {hovering: true}
+
+  onMouseLeave: ->
+    @setState {hovering: false}
+
+  startAutoAdvance: ->
+    func = () =>
+      @advance() if @isMounted() and not @state.hovering and dom.isVisible(React.findDOMNode(@refs.top))
+      setTimeout(func, @props.delay)
+    setTimeout(func, @props.delay)
+
+  stopAutoAdvance: ->
+    clearTimeout(@timeout) if @timeout
+
+  setSlide: (slide) ->
+    @setState {slide}
+
+  advance: ->
+    slide = (@state.slide + 1) % @slides.length
+    @setState {slide}
 
 }
 

@@ -1,23 +1,28 @@
 #--------------------------------------------------------------------------------
 React       = require 'react/addons'
+mergeProps  = require 'util/mergeProps'
 {PropTypes} = React
-{div}       = React.DOM
+{a}         = React.DOM
 #--------------------------------------------------------------------------------
-require './Section.styl'
+require './Button.styl'
 #--------------------------------------------------------------------------------
 
-Section = React.createClass {
+Button = React.createClass {
 
-  displayName: 'Section'
+  displayName: 'Button'
 
   propTypes:
     color: PropTypes.string
 
   render: ->
 
-    div {className: "section #{@props.color}"},
+    props = mergeProps @props, {
+      className: "button #{@props.color}"
+    }
+
+    a props,
       @props.children
 
 }
 
-module.exports = Section
+module.exports = Button

@@ -1,6 +1,6 @@
 #--------------------------------------------------------------------------------
 _            = require 'lodash'
-React        = require 'react'
+React        = require 'react/addons'
 Router       = require 'react-router'
 RouteHandler = React.createFactory(Router.RouteHandler)
 {PropTypes}  = React
