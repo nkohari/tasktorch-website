@@ -37,7 +37,7 @@ Slideshow = React.createClass {
       React.cloneElement slide, {key: index}
 
   componentDidMount: ->
-    @startAutoAdvance()
+    #@startAutoAdvance()
 
   componentWillUnmount: ->
     @stopAutoAdvance()

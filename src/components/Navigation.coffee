@@ -1,7 +1,5 @@
 #--------------------------------------------------------------------------------
 React                  = require 'react/addons'
-classSet               = require 'util/classSet'
-{PropTypes}            = React
 {a, div, h1, img, nav} = React.DOM
 #--------------------------------------------------------------------------------
 require './Navigation.styl'
@@ -11,17 +9,9 @@ Navigation = React.createClass {
 
   displayName: 'Navigation'
 
-  propTypes:
-    pinned: PropTypes.bool
-
   render: ->
 
-    classes = classSet [
-      'navigation'
-      'pinned' if @props.pinned
-    ]
-
-    nav {className: classes},
+    nav {className: 'navigation'},
       div {className: 'left'},
         a {href: '#'}, 'Our Product'
         a {href: '#'}, 'Who We Are'

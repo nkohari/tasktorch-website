@@ -13,7 +13,8 @@ Icon = React.createClass {
   displayName: 'Icon'
 
   propTypes:
-    size:   PropTypes.number
+    height: PropTypes.number
+    width:  PropTypes.number
     name:   PropTypes.string
     color:  PropTypes.string
     colors: PropTypes.arrayOf(PropTypes.string)
@@ -26,10 +27,10 @@ Icon = React.createClass {
     paths = _.map data.paths, (p, index) =>
       path {key: index, className: colors[p.color], d: p.data}
 
-    props = mergeProps _.omit(@props, 'size', 'name', 'color', 'colors'), {
+    props = mergeProps _.omit(@props, 'height', 'width', 'name', 'color', 'colors'), {
       className: "icon #{@props.name}"
-      style: {height: @props.size, width: @props.size}
-      viewBox: "0 0 #{data.size} #{data.size}"
+      style: {height: @props.height, width: @props.width}
+      viewBox: "0 0 #{data.width} #{data.height}"
     }
 
     svg props, paths

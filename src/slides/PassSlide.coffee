@@ -20,19 +20,24 @@ PassSlide = React.createClass {
   render: ->
 
     Slide {className: 'pass-slide'},
-      div {className: 'graphic'},
-        Icon {name: 'woman',    size: 120, color:  'pink'}
-        Icon {name: 'exchange', size: 80, colors: ['orange', 'pink']}
-        Icon {name: 'man',      size: 120, color:  'orange'}
       div {className: 'text'},
         h3 {},
           "Pass the torch"
         p {},
           "When you're finished with your part, you pass the card to the next person "
-          "who needs to contribute. You can also pass cards to teams, and let anyone "
-          "on the team claim them."
+          "or team who needs to contribute. The card goes to their inbox, where they "
+          "can choose to accept it or pass it along."
         Button {color: 'orange'},
           "Sign up for our free beta"
+      div {className: 'graphic'},
+        div {className: 'item'},
+          Icon {name: 'woman',    height: 90, width: 90,  color:  'pink'}
+          Icon {name: 'exchange', height: 80, width: 70,  colors: ['orange', 'pink']}
+          Icon {name: 'man',      height: 90, width: 90,  color:  'orange'}
+        div {className: 'item'},
+          Icon {name: 'woman',    height: 90, width: 90,  color:  'pink'}
+          Icon {name: 'exchange', height: 80, width: 70,  colors: ['orange', 'pink']}
+          Icon {name: 'team',     height: 85, width: 95, colors: ['orange', 'pink']}
 
 }
 
