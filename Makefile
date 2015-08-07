@@ -11,7 +11,7 @@ build: clean
 	@NODE_ENV=production $(BIN)/webpack --progress --color --optimize-minimize
 
 compress: build
-	@ls $(DIST)/* | while read -r file; do \
+	@find $(DIST) -type f | while read -r file; do \
 		echo "Compressing $$file"; \
 		gzip -9 -c "$$file" > "$$file.gz"; \
 		mv "$$file.gz" "$$file"; \
