@@ -7,35 +7,36 @@ Slide        = React.createFactory(require 'components/Slide')
 {PropTypes}  = React
 {div, h3, p} = React.DOM
 #--------------------------------------------------------------------------------
-require './QueueSlide.styl'
+require './TeamSlide.styl'
 #--------------------------------------------------------------------------------
 
-QueueSlide = React.createClass {
+TeamSlide = React.createClass {
 
-  displayName: 'QueueSlide'
+  displayName: 'TeamSlide'
 
   statics:
-    callout: {type: 'spotlight', x: 100, y: 40, image: require('images/screenshots/queue.png')}
+    callout: {type: 'wide', x: 200, y: 60, image: require('images/screenshots/team.jpg')}
 
   render: ->
 
-    Slide {className: 'queue-slide'},
+    Slide {className: 'team-slide'},
       div {className: 'text'},
         h3 {},
-          "You're in control"
+          "Stay action-oriented"
         p {},
-          "Everyone gets their own list of tasks that only they can update. "
-          "All you have to do is keep your list up to date, and we take care of the rest."
+          "Stuff"
         Button {color: 'orange'},
           "Sign up for our free beta"
       div {className: 'graphic'},
         div {className: 'item'},
-          Icon {name: 'man',       height: 90, width: 90, color: 'orange'}
-          Icon {name: 'checklist', height: 90, width: 90, color: 'orange'}
+          Icon {name: 'woman',    height: 90, width: 90,  color:  'pink'}
+          Icon {name: 'exchange', height: 80, width: 70,  colors: ['orange', 'pink']}
+          Icon {name: 'man',      height: 90, width: 90,  color:  'orange'}
         div {className: 'item'},
-          Icon {name: 'woman',     height: 90, width: 90, color: 'pink'}
-          Icon {name: 'checklist', height: 90, width: 90, color: 'pink'}
+          Icon {name: 'woman',    height: 90, width: 90,  color:  'pink'}
+          Icon {name: 'exchange', height: 80, width: 70,  colors: ['orange', 'pink']}
+          Icon {name: 'team',     height: 85, width: 95, colors: ['orange', 'pink']}
 
 }
 
-module.exports = QueueSlide
+module.exports = TeamSlide

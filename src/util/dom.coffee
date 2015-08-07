@@ -1,6 +1,9 @@
-exports.isVisible = (element) ->
+exports.getViewportHeight = getViewportHeight = () ->
+  document.documentElement?.clientHeight or window.innerHeight
+
+exports.getViewportWidth = getViewportWidth = () ->
+  document.documentElement?.clientWidth or window.innerWidth
+
+exports.isVisible = isVisible = (element, minPixelsVisible = 0) ->
   rect = element.getBoundingClientRect()
-  rect.top >= 0 and
-    rect.left >= 0 and
-    rect.bottom <= (window.innerHeight or document.documentElement.clientHeight) and
-    rect.right <= (window.innerWidth or document.documentElement.clientWidth)
+  (rect.top + minPixelsVisible) < getViewportHeight()

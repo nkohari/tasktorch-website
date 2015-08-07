@@ -1,0 +1,62 @@
+footer
+  display: flex
+  position: relative
+  background: $color-darkgray
+  border-top: 4px solid $color-gray
+  flex-direction: column
+  align-items: center
+  
+  .links
+    display: flex
+    padding: 40px 0 20px 0
+    
+    .left
+      display: flex
+      align-items: center
+      margin-right: 60px
+      font-family: $font-family-gotham
+      font-weight: $font-weight-bold
+      font-size: 16px
+      text-transform: uppercase
+      
+      .logo
+        height: 40px
+        margin-right: 10px
+    
+    .right
+      display: flex
+      flex: 1
+
+      ul
+        margin: 0
+        padding: 0
+        
+        li
+          list-style-type: none
+          margin-right: 60px
+      
+      a
+        color: $color-lightgray
+        text-decoration: none
+        font-size: 16px
+        tween(150ms)
+        &:hover
+          color: $color-white
+          border-bottom: 1px solid $color-white
+  
+  .bottom
+    padding-bottom: 20px
+    color: $color-gray
+    font-size: 14px
+
+    .love
+      color: $color-gray
+      transition: color 150ms ease
+      &:hover
+        color: #f00
+        animation: heartbeat 1s ease infinite
+
+@keyframes heartbeat
+  0%   { transform: scale(1)   }
+  50%  { transform: scale(1.5) }
+  100% { transform: scale(1)   }

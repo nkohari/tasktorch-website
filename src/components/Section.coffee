@@ -1,7 +1,7 @@
 #--------------------------------------------------------------------------------
 React       = require 'react/addons'
 {PropTypes} = React
-{div}       = React.DOM
+{section}   = React.DOM
 #--------------------------------------------------------------------------------
 require './Section.styl'
 #--------------------------------------------------------------------------------
@@ -15,7 +15,7 @@ Section = React.createClass {
 
   render: ->
 
-    div {className: "section #{@props.color}"},
+    section {className: @props.color},
       @props.children
 
 }

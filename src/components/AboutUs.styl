@@ -1,0 +1,69 @@
+.about-us
+  text-align: center
+  padding: 40px 0
+  background: $color-verydarkgray
+
+  h2
+    margin-bottom: 40px
+    width: 100%
+    font-size: 36px
+    font-weight: $font-weight-heavy
+    text-shadow: 0 1px 2px black(70%)
+
+  .bottom
+    display: flex
+    justify-content: center
+      
+  .niki
+    opacity: 0
+    transform: translateX(-100px)
+    tween(500ms)
+  
+  .nate
+    opacity: 0
+    transform: translateX(100px)
+    tween(500ms)
+  
+  &.visible
+    .niki, .nate, .center
+      opacity: 1
+      transform: translateX(0)
+    
+  .profile
+    
+    img
+      border-radius: 10px
+    
+    .caption
+      .name
+        font-size: 22px
+        margin-top: 12px
+      .title
+        color: $color-lightgray
+        font-size: 14px
+        font-style: italic
+      .contact
+        margin-top: 10px
+        display: flex
+        flex-direction: column
+        a
+          color: $color-lightgray
+          text-decoration: none
+          font-size: 14px
+          line-height: 16px
+          tween(150ms)
+          &:hover
+            color: $color-white
+                
+  .center
+    margin: 0 40px
+    width: 420px
+    color: $color-lightgray
+    font-size: 22px
+    line-height: 1.3em
+    text-align: justify
+    opacity: 0
+    transform: translateY(50px)
+    tween(500ms)
+    p
+      margin: 0 0 1em 0

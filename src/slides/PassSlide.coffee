@@ -15,7 +15,7 @@ PassSlide = React.createClass {
   displayName: 'PassSlide'
 
   statics:
-    callout: {x: 400, y: 60, image: require('images/screenshots/pass.png')}
+    callout: {type: 'spotlight', x: 400, y: 60, image: require('images/screenshots/pass.png')}
 
   render: ->
 

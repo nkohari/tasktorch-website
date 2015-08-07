@@ -1,6 +1,9 @@
 #--------------------------------------------------------------------------------
 React        = require 'react/addons'
 classSet     = require 'util/classSet'
+dom          = require 'util/dom'
+AboutUs      = React.createFactory(require 'components/AboutUs')
+Footer       = React.createFactory(require 'components/Footer')
 Navigation   = React.createFactory(require 'components/Navigation')
 Section      = React.createFactory(require 'components/Section')
 Slideshow    = React.createFactory(require 'components/Slideshow')
@@ -8,6 +11,7 @@ Splash       = React.createFactory(require 'components/Splash')
 QueueSlide   = React.createFactory(require 'slides/QueueSlide')
 PassSlide    = React.createFactory(require 'slides/PassSlide')
 ActionsSlide = React.createFactory(require 'slides/ActionsSlide')
+TeamSlide    = React.createFactory(require 'slides/TeamSlide')
 {body, div, header, main} = React.DOM
 #--------------------------------------------------------------------------------
 require './HomePage.styl'
@@ -44,17 +48,20 @@ HomePage = React.createClass {
             ActionsSlide {}
         Section {color: 'pink'},
           Slideshow {name: 'bigpicture', title: "Step back and see the big picture."},
-            QueueSlide {}
+            TeamSlide {}
+        Section {color: 'orange'},
+          AboutUs {}
+      Footer {}
 
   handleScroll: ->
-    pos = document.body.scrollTop
-    if pos < 200
+    pct = (document.body.scrollTop / dom.getViewportHeight()) * 100
+    if pct < 20
       scrollMark = undefined
-    else if pos >= 200 and pos < 450
+    else if pct < 50
       scrollMark = 'one'
     else
       scrollMark = 'two'
-    @setState {scrollMark}
+    @setState {scrollMark} unless scrollMark == @state.scrollMark
 
 }
 

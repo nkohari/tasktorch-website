@@ -59,7 +59,7 @@ Slideshow = React.createClass {
           h2 {}, @props.title
           div {className: 'chiclets'}, @renderChiclets()
         CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade', onClick: @advance},
-          div {key: @state.slide, className: 'callout', style: {left: callout.x, top: callout.y}},
+          div {key: @state.slide, className: "callout #{callout.type}", style: {left: callout.x, top: callout.y}},
             img {src: callout.image}
       div {className: 'bottom'},
         CSSTransitionGroup {component: 'div', className: 'caption', transitionName: 'fade'},

@@ -15,7 +15,7 @@ ActionsSlide = React.createClass {
   displayName: 'ActionsSlide'
 
   statics:
-    callout: {x: 400, y: 60, image: require('images/screenshots/actions.png')}
+    callout: {type: 'spotlight', x: 400, y: 60, image: require('images/screenshots/actions.png')}
 
   render: ->
 

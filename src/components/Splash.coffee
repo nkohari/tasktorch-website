@@ -21,9 +21,9 @@ Splash = React.createClass {
         h3 {},
           "TaskTorch is a social task management app for teams of all kinds."
         h3 {},
-          "Try it for free during our beta period."
+          "See how we're rethinking teamwork."
         Button {color: 'pink'},
-            "See how we're rethinking teamwork"
+          "Sign up for free beta access"
 
 }
 
