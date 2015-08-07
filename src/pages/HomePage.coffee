@@ -54,7 +54,7 @@ HomePage = React.createClass {
       Footer {}
 
   handleScroll: ->
-    pct = (document.body.scrollTop / dom.getViewportHeight()) * 100
+    pct = (dom.getScrollPosition() / dom.getViewportHeight()) * 100
     if pct < 20
       scrollMark = undefined
     else if pct < 50

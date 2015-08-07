@@ -1,3 +1,6 @@
+exports.getScrollPosition = getScrollPosition = () ->
+  document.documentElement?.scrollTop or document.body.scrollTop
+
 exports.getViewportHeight = getViewportHeight = () ->
   document.documentElement?.clientHeight or window.innerHeight
 
