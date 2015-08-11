@@ -6,6 +6,7 @@ AboutUs      = React.createFactory(require 'components/AboutUs')
 Footer       = React.createFactory(require 'components/Footer')
 Navigation   = React.createFactory(require 'components/Navigation')
 Section      = React.createFactory(require 'components/Section')
+SignUpBox    = React.createFactory(require 'components/SignUpBox')
 Slideshow    = React.createFactory(require 'components/Slideshow')
 Splash       = React.createFactory(require 'components/Splash')
 QueueSlide   = React.createFactory(require 'slides/QueueSlide')
@@ -38,10 +39,10 @@ HomePage = React.createClass {
     ]
 
     body {className: classes},
-      Navigation {}
       Splash {}
+      Navigation {}
       main {},
-        Section {color: 'blue'},
+        Section {id: 'product', color: 'blue'},
           Slideshow {name: 'focus', title: "Stay focused on what's relevant to you."},
             PassSlide {}
             QueueSlide {}
@@ -49,8 +50,10 @@ HomePage = React.createClass {
         Section {color: 'pink'},
           Slideshow {name: 'bigpicture', title: "Step back and see the big picture."},
             TeamSlide {}
-        Section {color: 'orange'},
+        Section {id: 'about-us', color: 'orange'},
           AboutUs {}
+        Section {color: 'blue'},
+          SignUpBox {}
       Footer {}
 
   handleScroll: ->

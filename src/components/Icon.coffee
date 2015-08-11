@@ -1,6 +1,7 @@
 #--------------------------------------------------------------------------------
 _           = require 'lodash'
 React       = require 'react/addons'
+classSet    = require 'util/classSet'
 mergeProps  = require 'util/mergeProps'
 {PropTypes} = React
 {svg, path} = React.DOM
@@ -13,11 +14,12 @@ Icon = React.createClass {
   displayName: 'Icon'
 
   propTypes:
-    height: PropTypes.number
-    width:  PropTypes.number
-    name:   PropTypes.string
-    color:  PropTypes.string
-    colors: PropTypes.arrayOf(PropTypes.string)
+    height:     PropTypes.number
+    width:      PropTypes.number
+    name:       PropTypes.string
+    color:      PropTypes.string
+    colors:     PropTypes.arrayOf(PropTypes.string)
+    background: PropTypes.string
 
   render: ->
 
@@ -27,8 +29,14 @@ Icon = React.createClass {
     paths = _.map data.paths, (p, index) =>
       path {key: index, className: colors[p.color], d: p.data}
 
-    props = mergeProps _.omit(@props, 'height', 'width', 'name', 'color', 'colors'), {
-      className: "icon #{@props.name}"
+    classes = classSet [
+      'icon'
+      @props.name
+      @props.background if @props.background?
+    ]
+
+    props = mergeProps _.omit(@props, 'background', 'height', 'width', 'name', 'color', 'colors'), {
+      className: classes
       style: {height: @props.height, width: @props.width}
       viewBox: "0 0 #{data.width} #{data.height}"
     }

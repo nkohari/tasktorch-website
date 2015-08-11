@@ -1,3 +1,6 @@
+exports.scrollTo = (element, adjustment = 0) ->
+  document.body.scrollTop = element.offsetTop + adjustment
+
 exports.getScrollPosition = getScrollPosition = () ->
   document.documentElement?.scrollTop or document.body.scrollTop
 

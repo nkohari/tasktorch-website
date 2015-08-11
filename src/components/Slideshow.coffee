@@ -3,6 +3,7 @@ _                  = require 'lodash'
 React              = require 'react/addons'
 classSet           = require 'util/classSet'
 dom                = require 'util/dom'
+Icon               = React.createFactory(require 'components/Icon')
 CSSTransitionGroup = React.createFactory(React.addons.CSSTransitionGroup)
 {PropTypes}        = React
 {a, div, h2, img}  = React.DOM
@@ -37,7 +38,7 @@ Slideshow = React.createClass {
       React.cloneElement slide, {key: index}
 
   componentDidMount: ->
-    @startAutoAdvance()
+    #@startAutoAdvance()
 
   componentWillUnmount: ->
     @stopAutoAdvance()
@@ -57,21 +58,16 @@ Slideshow = React.createClass {
       div {ref: 'top', className: 'top'},
         div {className: 'header'},
           h2 {}, @props.title
-          div {className: 'chiclets'}, @renderChiclets()
-        CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade', onClick: @advance},
+        CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade', onClick: @forward},
           div {key: @state.slide, className: "callout #{callout.type}", style: {left: callout.x, top: callout.y}},
             img {src: callout.image}
+          a {className: 'nav prev', onClick: @back},
+            Icon {name: 'arrowLeft', height: 100, width: 100, color: 'black'}
+          a {className: 'nav next', onClick: @forward},
+            Icon {name: 'arrowRight', height: 100, width: 100, color: 'black'}
       div {className: 'bottom'},
         CSSTransitionGroup {component: 'div', className: 'caption', transitionName: 'fade'},
           slide
-
-  renderChiclets: ->
-    _.map @slides, (slide, index) =>
-      classes = classSet [
-        'chiclet'
-        'selected' if index == @state.slide
-      ]
-      a {key: index, className: classes, onClick: @setSlide.bind(this, index)}
 
   onMouseEnter: ->
     @setState {hovering: true}
@@ -81,17 +77,18 @@ Slideshow = React.createClass {
 
   startAutoAdvance: ->
     func = () =>
-      @advance() if @isMounted() and not @state.hovering and dom.isVisible(React.findDOMNode(@refs.top))
+      @forward() if @isMounted() and not @state.hovering and dom.isVisible(React.findDOMNode(@refs.top))
       setTimeout(func, @props.delay)
     setTimeout(func, @props.delay)
 
   stopAutoAdvance: ->
     clearTimeout(@timeout) if @timeout
 
-  setSlide: (slide) ->
+  back: ->
+    slide = if @state.slide == 0 then @slides.length else @state.slide - 1
     @setState {slide}
 
-  advance: ->
+  forward: ->
     slide = (@state.slide + 1) % @slides.length
     @setState {slide}
 

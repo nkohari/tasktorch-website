@@ -3,16 +3,38 @@
   
   &.focus
     .backdrop { background-image: url('~images/backdrop-focus.png') }
+    
   &.bigpicture
     .backdrop { background-image: url('~images/backdrop-bigpicture.png') }
+    
+  .nav
+    position: absolute
+    background: $color-white
+    box-shadow: 0 0 10px black(30%)
+    border-radius: 50%
+    height: 100px
+    width: 100px
+    top: 170px
+    cursor: pointer
+    tween(150ms)
+    &:hover
+      box-shadow: 0 0 20px black(30%)
+    &.prev
+      left: -50px
+      &:hover
+        transform: scale(1.1)
+    &.next
+      right: -50px
+      &:hover
+        transform: scale(1.1)
   
   .top
     padding-top: 20px
     background: linear-gradient(to bottom, $color-black, $color-gray)
   
   h2
-    margin-top: 40px
-    margin-bottom: 20px
+    margin-top: 20px
+    margin-bottom: 40px
     width: 100%
     font-size: 36px
     font-weight: $font-weight-heavy

@@ -11,11 +11,12 @@ Section = React.createClass {
   displayName: 'Section'
 
   propTypes:
+    id:    PropTypes.string
     color: PropTypes.string
 
   render: ->
 
-    section {className: @props.color},
+    section {id: @props.id, className: @props.color},
       @props.children
 
 }
