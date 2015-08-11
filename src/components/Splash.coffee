@@ -1,5 +1,6 @@
 #--------------------------------------------------------------------------------
 React                 = require 'react/addons'
+strings               = require 'util/strings'
 Button                = React.createFactory(require 'components/Button')
 {div, header, h2, h3} = React.DOM
 #--------------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Splash = React.createClass {
         h3 {},
           "See how we're rethinking teamwork."
         Button {color: 'pink'},
-          "Sign up for free beta access"
+          strings.CallToAction
 
 }
 

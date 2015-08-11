@@ -1,18 +1,20 @@
 #--------------------------------------------------------------------------------
-React        = require 'react/addons'
-classSet     = require 'util/classSet'
-dom          = require 'util/dom'
-AboutUs      = React.createFactory(require 'components/AboutUs')
-Footer       = React.createFactory(require 'components/Footer')
-Navigation   = React.createFactory(require 'components/Navigation')
-Section      = React.createFactory(require 'components/Section')
-SignUpBox    = React.createFactory(require 'components/SignUpBox')
-Slideshow    = React.createFactory(require 'components/Slideshow')
-Splash       = React.createFactory(require 'components/Splash')
-QueueSlide   = React.createFactory(require 'slides/QueueSlide')
-PassSlide    = React.createFactory(require 'slides/PassSlide')
-ActionsSlide = React.createFactory(require 'slides/ActionsSlide')
-TeamSlide    = React.createFactory(require 'slides/TeamSlide')
+React         = require 'react/addons'
+classSet      = require 'util/classSet'
+dom           = require 'util/dom'
+AboutUs       = React.createFactory(require 'components/AboutUs')
+Footer        = React.createFactory(require 'components/Footer')
+Navigation    = React.createFactory(require 'components/Navigation')
+Section       = React.createFactory(require 'components/Section')
+SignUpBox     = React.createFactory(require 'components/SignUpBox')
+Slideshow     = React.createFactory(require 'components/Slideshow')
+Splash        = React.createFactory(require 'components/Splash')
+QueueSlide    = React.createFactory(require 'slides/focus/QueueSlide')
+PassSlide     = React.createFactory(require 'slides/focus/PassSlide')
+KindSlide     = React.createFactory(require 'slides/focus/KindSlide')
+TeamSlide     = React.createFactory(require 'slides/bigpicture/TeamSlide')
+GoalSlide     = React.createFactory(require 'slides/bigpicture/GoalSlide')
+ProgressSlide = React.createFactory(require 'slides/bigpicture/ProgressSlide')
 {body, div, header, main} = React.DOM
 #--------------------------------------------------------------------------------
 require './HomePage.styl'
@@ -42,14 +44,16 @@ HomePage = React.createClass {
       Splash {}
       Navigation {}
       main {},
-        Section {id: 'product', color: 'blue'},
+        Section {id: 'focus', color: 'blue'},
           Slideshow {name: 'focus', title: "Stay focused on what's relevant to you."},
-            PassSlide {}
             QueueSlide {}
-            ActionsSlide {}
-        Section {color: 'pink'},
-          Slideshow {name: 'bigpicture', title: "Step back and see the big picture."},
+            PassSlide {}
+            KindSlide {}
+        Section {id: 'bigpicture', color: 'pink'},
+          Slideshow {name: 'bigpicture', title: "Then step back and see the big picture."},
             TeamSlide {}
+            GoalSlide {}
+            ProgressSlide {}
         Section {id: 'about-us', color: 'orange'},
           AboutUs {}
         Section {color: 'blue'},

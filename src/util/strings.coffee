@@ -1,0 +1,1 @@
+exports.CallToAction = "Sign up for free beta access"

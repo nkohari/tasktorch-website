@@ -9,24 +9,20 @@
     
   .nav
     position: absolute
-    background: $color-white
+    background: $color-gray
     box-shadow: 0 0 10px black(30%)
     border-radius: 50%
-    height: 100px
-    width: 100px
-    top: 170px
+    height: 90px
+    width: 90px
+    top: 175px
     cursor: pointer
     tween(150ms)
     &:hover
-      box-shadow: 0 0 20px black(30%)
+      transform: scale(1.1)
     &.prev
-      left: -50px
-      &:hover
-        transform: scale(1.1)
+      left: -45px
     &.next
-      right: -50px
-      &:hover
-        transform: scale(1.1)
+      right: -45px
   
   .top
     padding-top: 20px
@@ -68,6 +64,7 @@
       background: $color-white
       box-shadow: 0 0 30px black(50%)
       overflow: hidden
+      cursor: pointer
       &.fade-enter { animation: spotlight-fade-in  500ms ease }
       &.fade-leave { animation: spotlight-fade-out 500ms ease }
     
@@ -93,7 +90,7 @@
     .caption
       position: relative
       width: 970px
-      height: 240px
+      height: 220px
       margin: 0 auto
 
 

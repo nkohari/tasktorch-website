@@ -1,6 +1,6 @@
 #--------------------------------------------------------------------------------
-React                               = require 'react/addons'
-{a, div, footer, img, li, span, ul} = React.DOM
+React                                  = require 'react/addons'
+{a, div, footer, img, li, p, span, ul} = React.DOM
 #--------------------------------------------------------------------------------
 require './Footer.styl'
 #--------------------------------------------------------------------------------
@@ -33,9 +33,14 @@ Footer = React.createClass {
             li {},
               a {}, "@TaskTorch"
       div {className: 'bottom'},
-        "Made with "
-        span {className: 'love'}, "\u2764"
-        " and fueled by barbecue in Raleigh, North Carolina."
+        p {},
+          "Made with "
+          span {className: 'love'}, "\u2764"
+          " and fueled by barbecue in Raleigh, North Carolina."
+        p {},
+          "This website is "
+          a {href: 'https://github.com/tasktorch/marketing', target: '_blank'}, "open source"
+          "."
 
 }
 

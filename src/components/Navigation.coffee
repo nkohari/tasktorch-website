@@ -15,7 +15,7 @@ Navigation = React.createClass {
 
     nav {className: 'navigation'},
       div {className: 'left'},
-        a {className: 'nav-link', onClick: @scrollToProduct}, 'Our Product'
+        a {className: 'nav-link', onClick: @scrollToFocus}, 'Our Product'
         a {className: 'nav-link', onClick: @scrollToAboutUs}, 'Who We Are'
       a {className: 'center', onClick: @scrollToTop},
         img {className: 'logo', src: require('images/tasktorch-color.svg')}
@@ -28,8 +28,8 @@ Navigation = React.createClass {
     el = document.getElementsByTagName('html')[0]
     Velocity(el, 'scroll', {duration: 500, easing: 'ease'})
 
-  scrollToProduct: ->
-    el = document.getElementById('product')
+  scrollToFocus: ->
+    el = document.getElementById('focus')
     Velocity(el, 'scroll', {offset: -70, duration: 500, easing: 'ease'})
 
   scrollToAboutUs: ->

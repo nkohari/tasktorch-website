@@ -58,13 +58,13 @@ Slideshow = React.createClass {
       div {ref: 'top', className: 'top'},
         div {className: 'header'},
           h2 {}, @props.title
-        CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade', onClick: @forward},
+        CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade'},
           div {key: @state.slide, className: "callout #{callout.type}", style: {left: callout.x, top: callout.y}},
-            img {src: callout.image}
+            img {src: callout.image, onClick: @forward}
           a {className: 'nav prev', onClick: @back},
-            Icon {name: 'arrowLeft', height: 100, width: 100, color: 'black'}
+            Icon {name: 'arrowLeft', height: 90, width: 90, color: 'white'}
           a {className: 'nav next', onClick: @forward},
-            Icon {name: 'arrowRight', height: 100, width: 100, color: 'black'}
+            Icon {name: 'arrowRight', height: 90, width: 90, color: 'white'}
       div {className: 'bottom'},
         CSSTransitionGroup {component: 'div', className: 'caption', transitionName: 'fade'},
           slide
@@ -85,7 +85,7 @@ Slideshow = React.createClass {
     clearTimeout(@timeout) if @timeout
 
   back: ->
-    slide = if @state.slide == 0 then @slides.length else @state.slide - 1
+    slide = if @state.slide == 0 then (@slides.length - 1) else (@state.slide - 1)
     @setState {slide}
 
   forward: ->
