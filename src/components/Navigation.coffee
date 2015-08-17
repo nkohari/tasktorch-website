@@ -1,7 +1,6 @@
 #--------------------------------------------------------------------------------
 React                  = require 'react/addons'
 dom                    = require 'util/dom'
-Velocity               = require 'velocity-animate' if window?
 {a, div, h1, img, nav} = React.DOM
 #--------------------------------------------------------------------------------
 require './Navigation.styl'
@@ -25,16 +24,15 @@ Navigation = React.createClass {
         a {className: 'nav-link', href: '#'}, 'Log In'
 
   scrollToTop: ->
-    el = document.getElementsByTagName('html')[0]
-    Velocity(el, 'scroll', {duration: 500, easing: 'ease'})
+    dom.scrollToTop()
 
   scrollToFocus: ->
     el = document.getElementById('focus')
-    Velocity(el, 'scroll', {offset: -70, duration: 500, easing: 'ease'})
+    dom.scrollTo(el, {offset: -70, duration: 500, easing: 'ease'})
 
   scrollToAboutUs: ->
     el = document.getElementById('about-us')
-    Velocity(el, 'scroll', {offset: -70, duration: 500, easing: 'ease'})
+    dom.scrollTo(el, {offset: -70, duration: 500, easing: 'ease'})
 
 }
 

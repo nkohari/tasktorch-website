@@ -1,10 +1,29 @@
 .signup
-  padding: 60px 0
+  padding: 140px 0
   font-size: 24px
   text-align: center
+  background: $color-verydarkgray url('~images/bg.png')
   
   p
     margin: 0 0 12px 0
   
+  input
+    display: inline-block
+    font-size: 24px
+    color: $color-white
+    width: 400px
+    background: $color-black
+    border: 2px solid $color-gray
+    border-radius: 4px
+    padding: 8px 12px
+    outline: none !important
+    &:focus
+      border-color: $color-lightgray
+  
+  form
+    margin-top: 32px
+    display: flex
+    justify-content: center
+
   .button
-    margin-top: 20px
+    margin-left: 20px

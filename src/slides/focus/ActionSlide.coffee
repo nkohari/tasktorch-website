@@ -7,33 +7,32 @@ Slide            = React.createFactory(require 'components/Slide')
 {PropTypes}      = React
 {div, h3, p, em} = React.DOM
 #--------------------------------------------------------------------------------
-require './PassSlide.styl'
+require './ActionSlide.styl'
 #--------------------------------------------------------------------------------
 
-PassSlide = React.createClass {
+ActionSlide = React.createClass {
 
-  displayName: 'PassSlide'
+  displayName: 'ActionSlide'
 
   statics:
-    callout: {type: 'spotlight', x: 320, y: 40, image: require('images/screenshots/pass.jpg')}
+    callout: {type: 'spotlight', x: 440, y: 40, image: require('images/screenshots/actions.jpg')}
 
   render: ->
 
-    Slide {className: 'pass-slide'},
+    Slide {className: 'action-slide'},
       div {className: 'text'},
         h3 {},
-          "Pass the torch"
+          "Work the way you want"
         p {},
-          "When you need help from someone else, you "
-          em {}, "pass"
-          " them a card. It goes to their inbox, where they can choose to accept it "
-          " or pass it along. It's even easier than sending an email."
+          "Cards have "
+          em {}, "actions"
+          " that shows what's been finished and what still needs to be done. Cards are pre-populated "
+          "with the actions you do routinely, and you can change them to handle special cases."
         SignUpButton {color: 'orange'}
       div {className: 'graphic'},
-        Icon {name: 'woman',    height: 80, width: 80, color:  'pink'}
-        Icon {name: 'exchange', height: 80, width: 70, colors: ['orange', 'pink']}
-        Icon {name: 'man',      height: 80, width: 80, color:  'orange'}
+        Icon {name: 'actions', height: 60, width: 100, color: 'orange'}
+        Icon {name: 'actions', height: 60, width: 100, color: 'pink'}
 
 }
 
-module.exports = PassSlide
+module.exports = ActionSlide

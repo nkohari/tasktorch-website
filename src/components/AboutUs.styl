@@ -1,10 +1,11 @@
 .about-us
   text-align: center
-  padding: 40px 0
-  background: $color-verydarkgray url('~images/bg.png')
+  padding: 60px 0
+  background: $color-black
+  force-layer()
 
   h2
-    margin-bottom: 40px
+    margin: 0 0 40px 0
     width: 100%
     font-size: 36px
     font-weight: $font-weight-heavy
@@ -32,6 +33,7 @@
   .profile
     
     img
+      width: 220px
       border-radius: 10px
     
     .caption
@@ -56,12 +58,12 @@
             color: $color-white
                 
   .center
-    margin: 0 40px
-    width: 420px
+    margin: 0 30px
+    width: 360px
     color: $color-lightgray
-    font-size: 22px
+    font-size: 20px
     line-height: 1.3em
-    text-align: justify
+    text-align: center
     opacity: 0
     transform: translateY(50px)
     tween(500ms)

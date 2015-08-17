@@ -1,8 +1,7 @@
 #--------------------------------------------------------------------------------
 React            = require 'react/addons'
 classSet         = require 'util/classSet'
-strings          = require 'util/strings'
-Button           = React.createFactory(require 'components/Button')
+SignUpButton     = React.createFactory(require 'components/SignUpButton')
 Icon             = React.createFactory(require 'components/Icon')
 Slide            = React.createFactory(require 'components/Slide')
 {PropTypes}      = React
@@ -16,7 +15,7 @@ GoalSlide = React.createClass {
   displayName: 'GoalSlide'
 
   statics:
-    callout: {type: 'wide', x: 190, y: 60, image: require('images/screenshots/team.jpg')}
+    callout: {type: 'wide', x: 80, y: 60, image: require('images/screenshots/goal.jpg')}
 
   render: ->
 
@@ -29,11 +28,10 @@ GoalSlide = React.createClass {
           em {}, "goals"
           ", you can see how close you are to finishing, no matter who is involved. "
           "Everyone can see the target, and can do their part to get the company there."
-        Button {color: 'orange'},
-          strings.CallToAction
+        SignUpButton {color: 'pink'}
       div {className: 'graphic'},
-        Icon {name: 'plan', height: 90, width: 90, color: 'orange'}
         Icon {name: 'goal', height: 90, width: 90, color: 'pink'}
+        Icon {name: 'plan', height: 90, width: 90, color: 'orange'}
 
 }
 

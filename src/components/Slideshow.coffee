@@ -3,10 +3,11 @@ _                  = require 'lodash'
 React              = require 'react/addons'
 classSet           = require 'util/classSet'
 dom                = require 'util/dom'
+Callout            = React.createFactory(require 'components/Callout')
 Icon               = React.createFactory(require 'components/Icon')
 CSSTransitionGroup = React.createFactory(React.addons.CSSTransitionGroup)
 {PropTypes}        = React
-{a, div, h2, img}  = React.DOM
+{a, div, h2}       = React.DOM
 #--------------------------------------------------------------------------------
 require './Slideshow.styl'
 #--------------------------------------------------------------------------------
@@ -58,9 +59,9 @@ Slideshow = React.createClass {
       div {ref: 'top', className: 'top'},
         div {className: 'header'},
           h2 {}, @props.title
-        CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade'},
-          div {key: @state.slide, className: "callout #{callout.type}", style: {left: callout.x, top: callout.y}},
-            img {src: callout.image, onClick: @forward}
+        div {className: 'frame'},
+          CSSTransitionGroup {component: 'div', className: 'backdrop', transitionName: 'fade'},
+            Callout {key: @state.slide, image: callout.image, type: callout.type, x: callout.x, y: callout.y, onClick: @forward}
           a {className: 'nav prev', onClick: @back},
             Icon {name: 'arrowLeft', height: 90, width: 90, color: 'white'}
           a {className: 'nav next', onClick: @forward},

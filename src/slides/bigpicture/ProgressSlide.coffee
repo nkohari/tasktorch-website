@@ -1,8 +1,7 @@
 #--------------------------------------------------------------------------------
 React            = require 'react/addons'
 classSet         = require 'util/classSet'
-strings          = require 'util/strings'
-Button           = React.createFactory(require 'components/Button')
+SignUpButton     = React.createFactory(require 'components/SignUpButton')
 Icon             = React.createFactory(require 'components/Icon')
 Slide            = React.createFactory(require 'components/Slide')
 {PropTypes}      = React
@@ -16,7 +15,7 @@ ProgressSlide = React.createClass {
   displayName: 'ProgressSlide'
 
   statics:
-    callout: {type: 'wide', x: 280, y: 60, image: require('images/screenshots/team.jpg')}
+    callout: {type: 'wide', x: 80, y: 60, image: require('images/screenshots/progress.jpg')}
 
   render: ->
 
@@ -25,13 +24,13 @@ ProgressSlide = React.createClass {
         h3 {},
           "Automatically follow progress"
         p {},
-          "The progress view is automatically generated from the actions on each card, "
-          "so you don't need to remember to update the board."
-        Button {color: 'orange'},
-          strings.CallToAction
+          "It's easy to follow the progress of cards. Even better, the view is generated "
+          "automatically as people finish work, so you always have an up-to-date "
+          "picture of what's happening."
+        SignUpButton {color: 'pink'}
       div {className: 'graphic'},
-        Icon {name: 'progress', height: 80, width: 144, color: 'orange'}
-        Icon {name: 'progress', height: 80, width: 144, color: 'pink'}
+        Icon {name: 'progress', height: 70, width: 126, color: 'orange'}
+        Icon {name: 'progress', height: 70, width: 126, color: 'pink'}
 
 }
 

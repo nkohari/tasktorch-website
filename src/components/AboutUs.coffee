@@ -30,7 +30,7 @@ AboutUs = React.createClass {
 
     div {className: classes},
       div {className: 'top'},
-        h2 {}, "We're on a mission to help teams do great things together."
+        h2 {}, "We're on a mission to help teams become more productive."
       div {className: 'bottom'},
         div {className: 'profile niki'},
           img {src: require('images/niki.jpg')}
@@ -42,11 +42,12 @@ AboutUs = React.createClass {
               a {href: "https://twitter.com/nikibeth", target: "_blank"}, "@nikibeth"
         div {className: 'center'},
           p {},
-            "Driven by the belief that great things happen when people with different backgrounds "
-            "work together towards a common goal, we've been on a mission for the past seven years "
-            "to help teams work better more effectively."
+            "We're driven by the belief that great things can happen when people with different backgrounds "
+            "work together towards a common goal."
           p {},
-            "We were frustrated that no project management system lets..."
+            "After years of being frustrated with project management systems that weren't built to help "
+            "individuals get things done, we built TaskTorch to help keep everyone focused and less "
+            "stressed."
         div {className: 'profile nate'},
           img {src: require('images/nate.jpg')}
           div {className: 'caption'},

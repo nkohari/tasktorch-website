@@ -1,5 +1,11 @@
-exports.scrollTo = (element, adjustment = 0) ->
-  document.body.scrollTop = element.offsetTop + adjustment
+Velocity = require 'velocity-animate' if window?
+
+exports.scrollTo = scrollTo = (element, options = undefined) ->
+  Velocity(element, 'scroll', options)
+
+exports.scrollToTop = scrollToTop = () ->
+  el = document.getElementsByTagName('html')[0]
+  scrollTo(el)
 
 exports.getScrollPosition = getScrollPosition = () ->
   document.documentElement?.scrollTop or document.body.scrollTop

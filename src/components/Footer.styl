@@ -18,6 +18,7 @@ footer
       font-weight: $font-weight-bold
       font-size: 16px
       text-transform: uppercase
+      cursor: pointer
       
       .logo
         height: 40px
@@ -36,14 +37,14 @@ footer
           margin-right: 60px
           font-size: 16px
   
-  a
+  .right a, .bottom a
     color: $color-lightgray
     text-decoration: none
     tween(150ms)
     &:hover
       color: $color-white
       border-bottom: 1px solid $color-white
-  
+    
   .bottom
     padding-bottom: 20px
     color: $color-gray

@@ -11,6 +11,7 @@ Slideshow     = React.createFactory(require 'components/Slideshow')
 Splash        = React.createFactory(require 'components/Splash')
 QueueSlide    = React.createFactory(require 'slides/focus/QueueSlide')
 PassSlide     = React.createFactory(require 'slides/focus/PassSlide')
+ActionSlide   = React.createFactory(require 'slides/focus/ActionSlide')
 KindSlide     = React.createFactory(require 'slides/focus/KindSlide')
 TeamSlide     = React.createFactory(require 'slides/bigpicture/TeamSlide')
 GoalSlide     = React.createFactory(require 'slides/bigpicture/GoalSlide')
@@ -49,15 +50,16 @@ HomePage = React.createClass {
             QueueSlide {}
             PassSlide {}
             KindSlide {}
+            ActionSlide {}
         Section {id: 'bigpicture', color: 'pink'},
           Slideshow {name: 'bigpicture', title: "Then step back and see the big picture."},
             TeamSlide {}
             GoalSlide {}
             ProgressSlide {}
-        Section {id: 'about-us', color: 'orange'},
-          AboutUs {}
-        Section {color: 'blue'},
+        Section {id: 'signup', color: 'blue'},
           SignUpBox {}
+        Section {id: 'about-us', color: 'blue'},
+          AboutUs {}
       Footer {}
 
   handleScroll: ->

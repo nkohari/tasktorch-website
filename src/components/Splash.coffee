@@ -1,7 +1,6 @@
 #--------------------------------------------------------------------------------
 React                 = require 'react/addons'
-strings               = require 'util/strings'
-Button                = React.createFactory(require 'components/Button')
+SignUpButton          = React.createFactory(require 'components/SignUpButton')
 {div, header, h2, h3} = React.DOM
 #--------------------------------------------------------------------------------
 require './Splash.styl'
@@ -13,7 +12,7 @@ Splash = React.createClass {
 
   render: ->
 
-    header {className: 'splash'},
+    header {id: 'splash', className: 'splash'},
       div {className: 'banner'},
         h2 {},
           "When everyone can focus on their own work,"
@@ -23,8 +22,7 @@ Splash = React.createClass {
           "TaskTorch is a social task management app for teams of all kinds."
         h3 {},
           "See how we're rethinking teamwork."
-        Button {color: 'pink'},
-          strings.CallToAction
+        SignUpButton {color: 'pink'}
 
 }
 

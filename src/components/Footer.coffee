@@ -1,5 +1,6 @@
 #--------------------------------------------------------------------------------
 React                                  = require 'react/addons'
+dom                                    = require 'util/dom'
 {a, div, footer, img, li, p, span, ul} = React.DOM
 #--------------------------------------------------------------------------------
 require './Footer.styl'
@@ -13,25 +14,25 @@ Footer = React.createClass {
 
     footer {},
       div {className: 'links'},
-        div {className: 'left'},
+        a {className: 'left', onClick: @scrollToTop},
           img {className: 'logo', src: require('images/tasktorch-white.svg')}
           div {}, "TaskTorch"
         div {className: 'right'},
           ul {},
             li {},
-              a {}, "Support"
+              a {href: 'http://support.tasktorch.com'}, "Support"
             li {},
-              a {}, "Terms of Service"
+              a {href: 'http://support.tasktorch.com/articles/terms.html'}, "Terms of Service"
           ul {},
             li {},
-              a {}, "Privacy"
+              a {href: 'http://support.tasktorch.com/articles/privacy.html'}, "Privacy"
             li {},
-              a {}, "Billing"
+              a {href: 'http://support.tasktorch.com/articles/billing.html'}, "Billing"
           ul {},
             li {},
-              a {}, "Blog"
+              a {href: 'http://tasktorch.com/blog'}, "Blog"
             li {},
-              a {}, "@TaskTorch"
+              a {href: 'http://twitter.com/tasktorch'}, "@TaskTorch"
       div {className: 'bottom'},
         p {},
           "Made with "
@@ -41,6 +42,9 @@ Footer = React.createClass {
           "This website is "
           a {href: 'https://github.com/tasktorch/marketing', target: '_blank'}, "open source"
           "."
+
+  scrollToTop: ->
+    dom.scrollToTop()
 
 }
 
