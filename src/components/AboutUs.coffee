@@ -58,7 +58,7 @@ AboutUs = React.createClass {
               a {href: "https://twitter.com/nkohari", target: "_blank"}, "@nkohari"
 
   handleScroll: ->
-    visible = dom.isVisible(@getDOMNode(), 400)
+    visible = dom.isVisible(@getDOMNode(), 300)
     @setState {visible}
 
 }

@@ -16,7 +16,7 @@ SignUpButton = React.createClass {
     }
 
     Button props,
-      "Sign up for free beta access"
+      "Sign up for free beta"
 
   scrollToSignup: ->
     el = document.getElementById('signup')

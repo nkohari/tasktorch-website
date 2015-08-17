@@ -1,6 +1,7 @@
 #--------------------------------------------------------------------------------
 React            = require 'react/addons'
 classSet         = require 'util/classSet'
+ShowMoreButton   = React.createFactory(require 'components/ShowMoreButton')
 SignUpButton     = React.createFactory(require 'components/SignUpButton')
 Icon             = React.createFactory(require 'components/Icon')
 Slide            = React.createFactory(require 'components/Slide')
@@ -30,6 +31,7 @@ QueueSlide = React.createClass {
           em {}, "queue"
           ") that shows your priorities. Everyone is in charge of their own queue."
         SignUpButton {color: 'orange'}
+        ShowMoreButton {color: 'pink'}
       div {className: 'graphic'},
         div {className: 'item'},
           Icon {name: 'man',       height: 75, width: 75, color: 'orange'}

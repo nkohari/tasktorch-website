@@ -26,7 +26,7 @@ TeamSlide = React.createClass {
         p {},
           "Since everyone's queue is visible to everyone else, it just takes a glance to see what everyone "
           "on a team is working on, what their priorities are, and if they might need some help."
-        SignUpButton {color: 'pink'}
+        SignUpButton {color: 'orange'}
       div {className: 'graphic'},
         Icon {name: 'team', height: 90, width: 90, color: 'orange'}
         Icon {name: 'sync', height: 60, width: 60, colors: ['orange', 'pink']}

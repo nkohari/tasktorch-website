@@ -1,6 +1,7 @@
 #--------------------------------------------------------------------------------
 React            = require 'react/addons'
 classSet         = require 'util/classSet'
+ShowMoreButton   = React.createFactory(require 'components/ShowMoreButton')
 SignUpButton     = React.createFactory(require 'components/SignUpButton')
 Icon             = React.createFactory(require 'components/Icon')
 Slide            = React.createFactory(require 'components/Slide')
@@ -29,6 +30,7 @@ PassSlide = React.createClass {
           " them a card. It goes to their inbox, where they can choose to accept it "
           " or pass it along. It's even easier than sending an email."
         SignUpButton {color: 'orange'}
+        ShowMoreButton {color: 'pink'}
       div {className: 'graphic'},
         Icon {name: 'woman',    height: 80, width: 80, color:  'pink'}
         Icon {name: 'exchange', height: 80, width: 70, colors: ['orange', 'pink']}

@@ -1,6 +1,7 @@
 #--------------------------------------------------------------------------------
 React            = require 'react/addons'
 classSet         = require 'util/classSet'
+ShowMoreButton   = React.createFactory(require 'components/ShowMoreButton')
 SignUpButton     = React.createFactory(require 'components/SignUpButton')
 Icon             = React.createFactory(require 'components/Icon')
 Slide            = React.createFactory(require 'components/Slide')
@@ -28,7 +29,8 @@ KindSlide = React.createClass {
           em {}, "kinds"
           " of cards, so you don't need to search through several \"projects\" to figure out what "
           "to work on. You just have one list of all of your priorities."
-        SignUpButton {color: 'orange'}
+        SignUpButton {color: 'pink'}
+        ShowMoreButton {color: 'orange'}
       div {className: 'graphic'},
         Icon {name: 'stack', height: 90, width: 99, colors: ['orange', 'pink', 'blue']}
         Icon {name: 'stack', height: 90, width: 99, colors: ['pink', 'orange', 'blue']}

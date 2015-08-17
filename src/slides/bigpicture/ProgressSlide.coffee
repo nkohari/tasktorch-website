@@ -27,7 +27,7 @@ ProgressSlide = React.createClass {
           "It's easy to follow the progress of cards. Even better, the view is generated "
           "automatically as people finish work, so you always have an up-to-date "
           "picture of what's happening."
-        SignUpButton {color: 'pink'}
+        SignUpButton {color: 'orange'}
       div {className: 'graphic'},
         Icon {name: 'progress', height: 70, width: 126, color: 'orange'}
         Icon {name: 'progress', height: 70, width: 126, color: 'pink'}

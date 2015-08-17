@@ -1,6 +1,7 @@
 #--------------------------------------------------------------------------------
 React            = require 'react/addons'
 classSet         = require 'util/classSet'
+ShowMoreButton   = React.createFactory(require 'components/ShowMoreButton')
 SignUpButton     = React.createFactory(require 'components/SignUpButton')
 Icon             = React.createFactory(require 'components/Icon')
 Slide            = React.createFactory(require 'components/Slide')
@@ -29,6 +30,7 @@ ActionSlide = React.createClass {
           " that shows what's been finished and what still needs to be done. Cards are pre-populated "
           "with the actions you do routinely, and you can change them to handle special cases."
         SignUpButton {color: 'orange'}
+        ShowMoreButton {color: 'pink'}
       div {className: 'graphic'},
         Icon {name: 'actions', height: 60, width: 100, color: 'orange'}
         Icon {name: 'actions', height: 60, width: 100, color: 'pink'}
