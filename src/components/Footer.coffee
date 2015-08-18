@@ -30,7 +30,7 @@ Footer = React.createClass {
               a {href: 'http://support.tasktorch.com/articles/billing.html'}, "Billing"
           ul {},
             li {},
-              a {href: 'http://tasktorch.com/blog'}, "Blog"
+              a {href: 'http://blog.tasktorch.com'}, "Blog"
             li {},
               a {href: 'http://twitter.com/tasktorch'}, "@TaskTorch"
       div {className: 'bottom'},
