@@ -24,7 +24,8 @@ Template = React.createClass {
       head {},
         meta {charSet: 'UTF-8'}
         meta {name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
-        title {}, @props.title
+        title {}, "TaskTorch: Social task management for teams of all kinds"
+        link {rel: 'shortcut icon', href: '//static.tasktorch.com/favicon.ico'}
         link {rel: 'stylesheet', href: 'bundle.css'}
         link {rel: 'stylesheet', href: '//cloud.typography.com/6999932/639968/css/fonts.css'}
       RouteHandler props

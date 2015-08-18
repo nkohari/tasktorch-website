@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "public marketing website for tasktorch",
   "dependencies": {
+    "jsonp": "0.2.0",
     "lodash": "3.10.0",
     "normalize.css": "3.0.3",
     "react": "0.13.3",

@@ -20,8 +20,8 @@ Navigation = React.createClass {
         img {className: 'logo', src: require('images/tasktorch-color.svg')}
         h1 {}, 'TaskTorch'
       div {className: 'right'},
-        a {className: 'nav-link', href: '#'}, 'Support'
-        a {className: 'nav-link', href: '#'}, 'Log In'
+        a {className: 'nav-link', href: 'http://support.tasktorch.com/'}, 'Support'
+        a {className: 'nav-link', href: 'https://app.tasktorch.com/x/login'}, 'Log In'
 
   scrollToTop: ->
     dom.scrollToTop()

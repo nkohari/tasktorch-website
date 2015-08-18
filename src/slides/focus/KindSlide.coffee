@@ -29,8 +29,8 @@ KindSlide = React.createClass {
           em {}, "kinds"
           " of cards, so you don't need to search through several \"projects\" to figure out what "
           "to work on. You just have one list of all of your priorities."
-        SignUpButton {color: 'pink'}
-        ShowMoreButton {color: 'orange'}
+        SignUpButton {color: 'orange'}
+        ShowMoreButton {color: 'pink'}
       div {className: 'graphic'},
         Icon {name: 'stack', height: 90, width: 99, colors: ['orange', 'pink', 'blue']}
         Icon {name: 'stack', height: 90, width: 99, colors: ['pink', 'orange', 'blue']}

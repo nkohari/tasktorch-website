@@ -45,7 +45,7 @@ HomePage = React.createClass {
       Splash {}
       Navigation {}
       main {},
-        Section {id: 'focus', color: 'blue'},
+        Section {id: 'focus', color: 'orange'},
           Slideshow {name: 'focus', title: "Stay focused on what's relevant to you."},
             QueueSlide {}
             PassSlide {}
