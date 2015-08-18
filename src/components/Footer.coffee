@@ -40,7 +40,7 @@ Footer = React.createClass {
           " and fueled by barbecue in Raleigh, North Carolina."
         p {},
           "This website is "
-          a {href: 'https://github.com/tasktorch/marketing', target: '_blank'}, "open source"
+          a {href: 'https://github.com/tasktorch/website', target: '_blank'}, "open source"
           "."
 
   scrollToTop: ->
