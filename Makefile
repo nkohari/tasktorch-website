@@ -1,6 +1,6 @@
 BIN=node_modules/.bin
 DIST=dist
-BUCKET=preview.tasktorch.com
+BUCKET=tasktorch.com
 
 all: build
 
