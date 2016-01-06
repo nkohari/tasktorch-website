@@ -1,0 +1,166 @@
+.pricing
+  background: url('~images/backgrounds/swirls.jpg')
+  
+  .content
+    background: linear-gradient(to bottom, black(0%), black(60%) 700px)
+    display: flex
+    flex-direction: column
+    align-items: center
+  
+  header
+    padding-top: 200px
+    display: flex
+    flex-direction: column
+    align-items: center
+      
+    h2
+      margin: 0 0 3rem 0
+      font-size: 3rem
+      line-height: 3.4rem
+      font-weight: $font-weight-heavy
+      color: $color-white
+      text-align: center
+      text-shadow: 0 2px 2px black(80%)
+      
+    .banner
+      margin-bottom: 3rem
+      width: 960px
+      padding: 40px
+      border: 1px solid white(20%)
+      border-radius: 40px
+      background: black(30%)
+      box-shadow: 0 0 100px white(30%)
+      display: flex
+      flex-direction: column
+      align-items: center
+    
+      .price
+        margin-bottom: 40px
+        color: $color-white
+        text-shadow: 0 2px 2px black(80%)
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        
+        .dolla
+          font-weight: $font-weight-heavy
+          font-size: 4rem
+          line-height: 8rem
+        
+        .number
+          font-weight: $font-weight-heavy
+          font-size: 10rem
+          line-height: 8rem
+        
+        .per
+          display: flex
+          flex-direction: column
+          font-size: 2rem
+          line-height: 2.4rem
+          margin-left: 10px
+      
+      .subheader
+        margin-bottom: 40px
+        font-size: 1.4rem
+        line-height: 1.8rem
+        font-weight: $font-weight-normal
+        color: $color-white
+        text-align: center
+        text-shadow: 0 2px 2px black(80%)
+
+  main
+    position: relative
+    z-index: 2
+    max-width: 960px
+
+    h3
+      display: flex
+      justify-content: center
+      align-items: center
+      margin: 0 0 2rem 0
+      font-size: 2rem
+      font-weight: $font-weight-heavy
+      img
+        height: 50px
+        margin-right: 10px
+      
+    h4
+      margin: 0 0 1rem 0
+      font-size: 1.4rem
+      font-weight: $font-weight-bold
+      
+    .philosophy
+      padding: 3rem 0
+      
+      p
+        margin: 0 0 1rem 0
+        font-size: 1.4rem
+        line-height: 1.9rem
+        color: white(87%)
+      
+      em
+        font-weight: $font-weight-bold
+        font-style: italic
+        color: $color-white
+    
+    .faq
+      padding: 0
+      
+      ul
+        margin: 0
+        padding: 0
+        display: flex
+        flex-flow: wrap
+        
+      li
+        list-style-type: none
+        margin: 0 20px 20px 0
+        width: 450px
+        
+        &:nth-child(even)
+          margin: 0 0 20px 20px
+        
+        .q
+          font-weight: $font-weight-heavy
+          &.pink
+            color: $color-brand-pink
+          &.orange
+            color: $color-brand-orange
+          &.blue
+            color: $color-brand-blue
+
+        p
+          margin: 0 0 1rem 0
+          font-size: 1.2rem
+          line-height: 1.6rem
+          color: white(87%)
+  
+    .contact
+      padding: 2rem 0 4rem 0
+      font-size: 1.4rem
+      text-align: center
+      color: white(87%)
+      
+      .divider
+        height: 1px
+        background: radial-gradient(white(60%) 0%, white(0%) 70%)
+      
+      a
+        color: $color-white
+        text-decoration: none
+        border-bottom: 1px solid transparent
+        tween(150ms)
+        &:hover
+          border-color: $color-white
+       
+    .cta
+      display: flex
+      justify-content: center
+      padding-bottom: 3rem
+  
+  footer
+    position: relative
+    z-index: 1
+    bottom: 0
+    width: 100%

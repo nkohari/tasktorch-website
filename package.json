@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "description": "public marketing website for tasktorch",
   "dependencies": {
+    "history": "1.17.0",
     "jsonp": "0.2.0",
     "lodash": "3.10.0",
     "normalize.css": "3.0.3",
-    "react": "0.13.3",
-    "react-router": "0.13.3",
+    "react": "0.14.6",
+    "react-addons-css-transition-group": "0.14.6",
+    "react-dom": "0.14.6",
+    "react-ga": "^1.2.0",
+    "react-router": "1.0.3",
     "velocity-animate": "1.2.2"
   },
   "devDependencies": {
@@ -18,12 +22,12 @@
     "file-loader": "0.8.4",
     "html-webpack-plugin": "1.5.2",
     "nib": "1.1.0",
-    "static-site-generator-webpack-plugin": "1.0.0",
+    "static-site-generator-webpack-plugin": "2.0.1",
     "style-loader": "0.12.3",
     "stylus-loader": "1.2.1",
     "url-loader": "0.5.6",
-    "webpack": "1.9.11",
-    "webpack-dev-server": "1.9.0"
+    "webpack": "1.12.9",
+    "webpack-dev-server": "1.14.0"
   },
   "scripts": {}
 }

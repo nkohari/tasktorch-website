@@ -1,7 +1,9 @@
 #--------------------------------------------------------------------------------
-React       = require 'react/addons'
+React       = require 'react'
+Router      = require 'react-router'
 mergeProps  = require 'util/mergeProps'
 {PropTypes} = React
+Link        = React.createFactory(Router.Link)
 {a}         = React.DOM
 #--------------------------------------------------------------------------------
 require './Button.styl'
@@ -20,7 +22,9 @@ Button = React.createClass {
       className: "button #{@props.color}"
     }
 
-    a props,
+    el = if @props.to? then Link else a
+
+    el props,
       @props.children
 
 }

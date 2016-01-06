@@ -1,6 +1,8 @@
 BIN=node_modules/.bin
 DIST=dist
-BUCKET=tasktorch.com
+TEMP=temp
+PRODUCTION_BUCKET=tasktorch.com
+PREVIEW_BUCKET=preview.tasktorch.com
 
 all: build
 
@@ -24,7 +26,16 @@ deploy: compress
 		--acl-public \
 		--add-header "Content-Encoding: gzip" \
 		--recursive . \
-		s3://$(BUCKET)/
+		s3://$(PRODUCTION_BUCKET)/
+
+preview: compress
+	cd $(DIST) && s3cmd put \
+		--access_key=$(AWS_ACCESS_KEY_ID) \
+		--secret_key=$(AWS_SECRET_ACCESS_KEY) \
+		--acl-public \
+		--add-header "Content-Encoding: gzip" \
+		--recursive . \
+		s3://$(PREVIEW_BUCKET)/
 
 dev:
-	@$(BIN)/webpack-dev-server --devtool eval --progress --colors --hot --content-base $(DIST) --port 9000
+	@$(BIN)/webpack-dev-server --devtool eval --progress --colors --hot --content-base $(TEMP) --port 8888

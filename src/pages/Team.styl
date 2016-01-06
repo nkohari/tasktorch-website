@@ -1,0 +1,83 @@
+.team
+  background: url('~images/backgrounds/swirls.jpg')
+  
+  .content
+    width: 100%
+    background: linear-gradient(to bottom, black(0%), black(60%) 700px)
+    display: flex
+    flex-direction: column
+    align-items: center
+  
+  header
+    padding: 200px 0 40px 0
+    display: flex
+    flex-direction: column
+    align-items: center
+      
+    h2
+      margin: 0
+      max-width: 1000px
+      font-size: 3rem
+      line-height: 3.4rem
+      font-weight: $font-weight-heavy
+      color: $color-white
+      text-align: center
+      text-shadow: 0 2px 2px black(80%)
+    
+    p
+      max-width: 1000px
+      text-align: center
+      font-size: 1.4rem
+      line-height: 1.8rem
+      
+  main
+    position: relative
+    padding-bottom: 60px
+    z-index: 2
+    display: flex
+    flex-direction: row
+    justify-content: center
+
+    .profile
+      
+      &:first-child
+        margin-right: 100px
+      
+      img
+        height: 350px
+        border-radius: 10px
+        margin-bottom: 20px
+      
+      .caption
+        width: 300px
+        .name
+          margin-bottom: 20px
+          font-size: 1.8rem
+          font-weight: $font-weight-bold
+          text-shadow: 0 2px 2px black(80%)
+        .bio
+          margin-bottom: 20px
+          color: white(87%)
+          font-size: 1.2rem
+          line-height: 1.4rem
+        .contact
+          padding: 0
+          li
+            list-style-type: none
+            margin: 0
+            font-size: 1.2rem
+            line-height: 1.4em
+            a
+              color: white(87%)
+              text-decoration: none
+              border-bottom: 1px solid transparent
+              tween(150ms)
+              &:hover
+                color: $color-white
+                border-color: $color-white
+
+  footer
+    position: relative
+    z-index: 1
+    bottom: 0
+    width: 100%

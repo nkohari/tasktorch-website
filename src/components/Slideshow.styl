@@ -1,11 +1,14 @@
 .slideshow
-  text-align: center
+  position: relative
+  width: 970px
+  height: 473px
+  background-image: url('~images/slideshow.png')
   
-  &.focus
-    .backdrop { background-image: url('~images/backdrop-focus.png') }
-    
-  &.bigpicture
-    .backdrop { background-image: url('~images/backdrop-bigpicture.png') }
+  .content
+    position: relative
+    overflow: hidden
+    height: 100%
+    width: 100%
     
   .nav
     position: absolute
@@ -23,17 +26,6 @@
       left: -45px
     &.next
       right: -45px
-  
-  .top
-    padding-top: 20px
-    background: linear-gradient(to bottom, $color-black, $color-gray)
-  
-  h2
-    margin: 20px 0
-    width: 100%
-    font-size: 36px
-    font-weight: $font-weight-heavy
-    text-shadow: 0 1px 2px black(70%)
     
   .chiclets
     margin-bottom: 20px
@@ -51,29 +43,12 @@
   .frame
     position: relative
     z-index: 0
-    width: 900px
-    margin: 0 auto
   
   .backdrop
     position: relative
-    width: 900px
+    width: 970px
     height: 473px
     background-size: 100% auto
     background-position: center
     background-repeat: no-repeat
     overflow: hidden
-      
-  .bottom
-    position: relative
-    z-index: 1
-    top: -44px
-    padding-top: 40px
-    background: $color-black
-    box-shadow: 0 0 30px black(50%)
-    text-align: left
-    
-    .caption
-      position: relative
-      width: 900px
-      height: 220px
-      margin: 0 auto

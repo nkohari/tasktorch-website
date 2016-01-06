@@ -1,44 +1,38 @@
 .navigation
-  position: fixed
-  top: 0
-  width: 100vw
-  z-index: 100
+  width: 100%
   padding: 20px
   display: flex
-  tween(300ms)
   
-  /body.scroll-mark-two &
-    padding: 10px 20px
-    background: $color-black
-    border-bottom: 1px solid $color-darkgray
-    box-shadow: 0 0 20px black(50%)
-    .left, .right
-      padding-top: 12px
-    .center
-      .logo
-        height: 50px
-      h1
-        opacity: 0
-        height: 0
-        margin: 0
-  
-  a
+  .left a, .right a
     display: inline-block
     cursor: pointer
-
-    &.nav-link
-      color: $color-white
-      font-family: $font-family-gotham
-      font-size: 16px
-      font-weight: $font-weight-bold
-      text-shadow: 0 1px 2px black(70%)
-      text-decoration: none
-      text-transform: uppercase
-      padding: 6px 12px
-      border-radius: 10px
-      tween(150ms)
+    color: $color-white
+    font-family: $font-family-gotham
+    font-size: 16px
+    line-height: 24px
+    font-weight: $font-weight-bold
+    text-shadow: 0 1px 2px black(70%)
+    text-decoration: none
+    text-transform: uppercase
+    padding: 4px 10px
+    border-radius: 10px
+    tween(150ms)
+    
+    &.pink:hover
+      background: $color-brand-pink
+      
+    &.orange:hover
+      background: $color-brand-orange
+      
+    &.blue:hover
+      background: $color-brand-blue
+      
+    &.cta
+      border: 2px solid $color-white
+      background: black(50%)
       &:hover
-        background: white(20%)
+        border-color: $color-brand-orange
+        background: $color-brand-orange
   
   .left
     flex: 1
@@ -56,16 +50,47 @@
   .center
     flex: none
     text-align: center
+    tween(300ms)
+    
+    a
+      color: $color-white
+      text-decoration: none
 
     .logo
-      height: 120px
+      height: 90px
       tween(300ms)
 
     h1
-      margin: 8px 0 0 0
+      margin: 0
       font-family: $font-family-gotham
-      font-size: 20px
+      font-size: 18px
       font-weight: $font-weight-bold
       text-shadow: 0 1px 2px black(70%)
       text-transform: uppercase
       tween(300ms)
+      
+  &.sticky
+    position: fixed
+    top: 0
+    width: 100vw
+    z-index: 100
+    padding: 20px
+    display: flex
+    tween(300ms)
+      
+  &.sticky.stuck
+    padding: 10px 20px
+    background: $color-black
+    border-bottom: 1px solid $color-darkgray
+    box-shadow: 0 0 20px black(50%)
+    
+    .left, .right
+      padding-top: 14px
+      
+    .center
+      .logo
+        height: 50px
+      h1
+        opacity: 0
+        height: 0
+        margin: 0

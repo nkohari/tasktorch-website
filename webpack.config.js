@@ -2,7 +2,6 @@ var path                      = require('path');
 var nib                       = require('nib');
 var ExtractTextPlugin         = require('extract-text-webpack-plugin');
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
-var config                    = require('./site.config.js');
 
 module.exports = {
   entry: {bundle: 'App'},
@@ -11,17 +10,22 @@ module.exports = {
       {test: /\.coffee$/, loader: 'coffee-loader'},
       {test: /\.jsx$/,    loader: 'script-loader!jsx-loader'},
       {test: /\.styl$/,   loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')},
-      {test: /assets/,    loader: 'file-loader?name=static/[name].[ext]'},
+      {test: /assets/,    loader: 'file-loader?name=/static/[path][name].[ext]'},
     ]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'static/bundle.js',
     libraryTarget: 'umd'
   },
   plugins: [
-    new StaticSiteGeneratorPlugin('bundle.js', config.routes),
-    new ExtractTextPlugin('[name].css'),
+    new StaticSiteGeneratorPlugin('static/bundle.js', [
+      '/',
+      '/product',
+      '/pricing',
+      '/team'
+    ]),
+    new ExtractTextPlugin('static/[name].css'),
   ],
   resolve: {
     extensions: ['', '.coffee', '.js', '.jsx'],
