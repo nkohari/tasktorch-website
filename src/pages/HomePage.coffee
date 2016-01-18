@@ -30,7 +30,7 @@ HomePage = React.createClass {
           br {}
           "By putting people first, we make it easy to stay organized and work well with others."
         div {className: 'cta'},
-          Button {color: 'orange', href: 'https://app.tasktorch.com/x/signup'}, "Start my free 30-day trial"
+          Button {color: 'orange', href: 'https://app.tasktorch.com/signup'}, "Start my free 30-day trial"
           Button {color: 'pink', to: '/product'}, "Take a product tour"
       Footer {}
 

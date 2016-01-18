@@ -22,7 +22,7 @@ Section = React.createClass {
         @props.title
       @props.children
       div {className: 'cta'},
-        Button {color: 'orange', href: 'https://app.tasktorch.com/x/signup'}, "Start my free 30-day trial"
+        Button {color: 'orange', href: 'https://app.tasktorch.com/signup'}, "Start my free 30-day trial"
         Button {color: 'pink', to: '/pricing'}, "What does it cost?"
 
 }

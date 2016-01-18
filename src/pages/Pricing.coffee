@@ -33,7 +33,7 @@ Pricing = React.createClass {
               br {}
               "No long-term commitment, no hidden charges."
             div {className: 'cta'},
-              Button {color: 'orange', href: 'https://app.tasktorch.com/x/signup'}, "Get started today"
+              Button {color: 'orange', href: 'https://app.tasktorch.com/signup'}, "Get started today"
               Button {color: 'pink', to: '/product'}, "Take a product tour"
         main {},
           div {className: 'philosophy'},
@@ -130,7 +130,7 @@ Pricing = React.createClass {
               "!"
             div {className: 'divider'}
           div {className: 'cta'},
-            Button {color: 'orange', href: 'https://app.tasktorch.com/x/signup'}, "Get started today"
+            Button {color: 'orange', href: 'https://app.tasktorch.com/signup'}, "Get started today"
             Button {color: 'pink', to: '/product'}, "Take a product tour"
       Footer {}
 

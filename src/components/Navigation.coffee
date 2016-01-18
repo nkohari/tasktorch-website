@@ -44,8 +44,8 @@ Navigation = React.createClass {
           img {className: 'logo', src: require('images/tasktorch-color.svg')}
           h1 {}, 'TaskTorch'
       div {className: 'right'},
-        a {className: 'pink', href: 'https://app.tasktorch.com/x/login'}, 'Log In'
-        a {className: 'cta', href: 'https://app.tasktorch.com/x/signup'}, 'Create an Account'
+        a {className: 'pink', href: 'https://app.tasktorch.com/login'}, 'Log In'
+        a {className: 'cta', href: 'https://app.tasktorch.com/signup'}, 'Create an Account'
 
   handleScroll: ->
     pct = (dom.getScrollPosition() / dom.getViewportHeight()) * 100

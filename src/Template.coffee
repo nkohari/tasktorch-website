@@ -32,7 +32,7 @@ Template = React.createClass {
       head {},
         meta {charSet: 'UTF-8'}
         meta {name: 'viewport', content: 'width=device-width, initial-scale=1.0'}
-        title {}, "TaskTorch: social task management software for team collaboration"
+        title {}, "TaskTorch: Social task management software for team collaboration"
         link {rel: 'shortcut icon', href: '//static.tasktorch.com/favicon.ico'}
         link {rel: 'stylesheet', href: '/static/bundle.css'}
         link {rel: 'stylesheet', href: '//cloud.typography.com/6999932/639968/css/fonts.css'}
